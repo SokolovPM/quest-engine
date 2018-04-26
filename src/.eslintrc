@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-constant-condition": 0
+  },
+  "globals": {
+    // Because webpack handles it.
+    "process": true,
+    "require": true,
+    "localStorage": true
+  }
+}

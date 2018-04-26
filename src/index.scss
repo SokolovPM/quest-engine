@@ -1,0 +1,39 @@
+$react-dates-width-input: 96px;
+$react-dates-width-arrow: 14px;
+$nprogress-color: #6CCCE3;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&subset=latin-ext');
+@import '~nprogress/nprogress.css';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.btn, button {
+  outline: none !important;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+#nprogress {
+  .bar {
+    background: $nprogress-color !important;
+  }
+
+  .peg {
+    box-shadow: 0 0 10px $nprogress-color, 0 0 5px $nprogress-color !important;
+  }
+
+  .spinner-icon {
+    border-top-color: $nprogress-color !important;
+    border-left-color: $nprogress-color !important;
+  }
+}

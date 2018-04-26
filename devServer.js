@@ -10,6 +10,9 @@ const path = require('path');
 const webpackConfig = require('./webpack.config');
 const constants = require('./constants');
 
+
+const dataSource = require('./dataSource');
+
 const app = express();
 app.use(express.static('dist'));
 
@@ -23,6 +26,10 @@ app.use(
 );
 
 const compiler = webpack(webpackConfig);
+
+app.get('/listOfQuests', (req, res) => {
+  res.send(dataSource.getListOfQuest());
+});
 
 app.use(
   modRewrite([

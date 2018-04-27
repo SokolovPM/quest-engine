@@ -1,0 +1,8 @@
+{
+  "name": "Golem Tale",
+  "description": "This is a short quest about Golem in Prague",
+  "questImage": {
+    "src": "quests/golem-tale/golem.jpg",
+    "horizontalAlign": false
+  }
+}

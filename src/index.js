@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import 'babel-polyfill';
 import 'whatwg-fetch';
+import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';

@@ -1,0 +1,8 @@
+{
+  "name": "Fairy Tale",
+  "description": "This is a short quest for children",
+  "questImage": {
+    "src": "quests/fairy-tale/fairy.jpg",
+    "horizontalAlign": false
+  }
+}

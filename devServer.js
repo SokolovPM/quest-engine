@@ -31,6 +31,10 @@ app.get('/listOfQuests', (req, res) => {
   res.send(dataSource.getListOfQuest());
 });
 
+app.get('/quests/:questName/*.jpg', (req, res) => {
+  res.sendFile(path.join(__dirname, req.path));
+});
+
 app.use(
   modRewrite([
     '!\\.html|\\.js|\\.svg|\\.woff|\\.ttf|\\.css|\\.png|\\.jpeg|\\.jpg|\\.swf|\\.gif$ /index.html [L]'

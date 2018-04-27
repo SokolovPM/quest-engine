@@ -1,4 +1,8 @@
 {
   "name": "Winter Tale",
-  "description": "This is a short quest for winter evening"
+  "description": "This is a short quest for winter evening",
+  "questImage": {
+    "src": "quests/winter-tale/winter.jpg",
+    "horizontalAlign": true
+  }
 }

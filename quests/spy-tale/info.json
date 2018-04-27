@@ -1,0 +1,8 @@
+{
+  "name": "Spy Tale",
+  "description": "This is a short quest about a secret spy",
+  "questImage": {
+    "src": "quests/spy-tale/spy.jpg",
+    "horizontalAlign": false
+  }
+}

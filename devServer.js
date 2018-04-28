@@ -34,6 +34,9 @@ app.get('/listOfQuests', (req, res) => {
 app.get('/quests/:questName/*.jpg', (req, res) => {
   res.sendFile(path.join(__dirname, req.path));
 });
+app.get('/quests/:questName/:chapterName/*preview.jpg', (req, res) => {
+  res.sendFile(path.join(__dirname, req.path));
+});
 
 app.use(
   modRewrite([

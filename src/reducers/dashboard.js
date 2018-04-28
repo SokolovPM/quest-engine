@@ -1,15 +1,20 @@
+import { find } from 'lodash';
+
 import constants from '../constants';
 
 import createReducer from '../utils/createReducer';
 
 const {
   GET_LIST_OF_QUEST,
+  GET_QUEST_INFO
 } = constants;
 
 const initialValues = {
   isLoading: false,
   error: null,
-  listOfQuests: []
+  listOfQuests: [],
+  questName: '',
+  questInfo: null
 };
 
 export default createReducer(initialValues, {
@@ -29,4 +34,9 @@ export default createReducer(initialValues, {
     isLoading: false,
     error
   }),
+
+  [GET_QUEST_INFO]: (state, { questName }) => {
+    const questInfo = find(state.listOfQuests, quest => quest.id === questName);
+    return { isLoading: true, questName, questInfo };
+  },
 });

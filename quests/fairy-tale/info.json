@@ -1,8 +1,38 @@
 {
+  "id": "fairy-tale",
   "name": "Fairy Tale",
-  "description": "This is a short quest for children",
+  "description": "This is a short quest for children.",
   "questImage": {
     "src": "quests/fairy-tale/fairy.jpg",
     "horizontalAlign": false
-  }
+  },
+  "chapters": [
+    {
+      "id": "chapter001",
+      "name": "Chapter 1",
+      "description": "Some description about chapter 1",
+      "chapterImage": {
+        "src": "quests/fairy-tale/chapter001/chapter001-preview.jpg",
+        "horizontalAlign": false
+      }
+    },
+    {
+      "id": "chapter002",
+      "name": "Chapter 2",
+      "description": "Some description about chapter 2",
+      "chapterImage": {
+        "src": "quests/fairy-tale/chapter002/chapter002-preview.jpg",
+        "horizontalAlign": false
+      }
+    },
+    {
+      "id": "chapter003",
+      "name": "Chapter 3",
+      "description": "Some description about chapter 3",
+      "chapterImage": {
+        "src": "quests/fairy-tale/chapter003/chapter003-preview.jpg",
+        "horizontalAlign": false
+      }
+    }
+  ]
 }

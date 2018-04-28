@@ -7,6 +7,8 @@ const Container = styled.div`
   min-height: 450px;
   cursor: pointer;
   font-family: Montserrat;
+  border-radius: 10px;
+  overflow: hidden;
 `;
 
 const Preview = styled.div`
@@ -38,7 +40,7 @@ class Tile extends Component {
   render () {
     const quest = this.props.quest;
     return (
-      <Container>
+      <Container onClick={() => this.props.onClick(quest.id)}>
         <Preview>
           <Image src={quest.questImage.src} horizontalAlign={quest.questImage.horizontalAlign}/>
         </Preview>

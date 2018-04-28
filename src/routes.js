@@ -2,10 +2,18 @@ import React from 'react';
 import { Router, Route } from 'react-router';
 import MainPage from './components/form';
 import Dashboard from './components/form/dashboard';
+import Layout from './components/form/layout';
+import QuestPage from './components/form/quest-page';
 
 const Routes = ({ history }) => (
   <Router history={history}>
-    <Route path="/" component={Dashboard} />
+    <Route component={Layout}>
+      <Route path="/" component={Dashboard} />
+      <Route
+          path='quest'
+          component={QuestPage}
+      />
+    </Route>
   </Router>
 );
 

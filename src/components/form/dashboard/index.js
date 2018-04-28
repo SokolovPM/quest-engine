@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { map } from 'lodash';
 import { connect } from 'react-redux';
 
-import { getListOfQuest } from '../../../actions';
+import { getListOfQuest, getQuestInfo } from '../../../actions';
 
 import Layout from '../layout';
 
@@ -49,19 +49,17 @@ class Dashboard extends Component {
     const chunks = chunk(listOfQuests);
     console.log('render2', chunks);
     return (
-      <Layout>
-        <Container>
-          {map(chunks, (chunk, i) => (
-            <Row key={i}>
-              {map(chunk, quest => (
-                <RowItem key={quest.name}>
-                  <Tile quest={quest} />
-                </RowItem>
-              ))}
-            </Row>
-          ))}
-        </Container>
-      </Layout>
+      <Container>
+        {map(chunks, (chunk, i) => (
+          <Row key={i}>
+            {map(chunk, quest => (
+              <RowItem key={quest.name}>
+                <Tile quest={quest} onClick={this.props.getQuestInfo} />
+              </RowItem>
+            ))}
+          </Row>
+        ))}
+      </Container>
     )
   }
 }
@@ -70,5 +68,5 @@ export default connect(
   state => ({
     listOfQuests: state.dashboard.listOfQuests
   }),
-  { getListOfQuest }
+  { getListOfQuest, getQuestInfo }
 )(Dashboard);

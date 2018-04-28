@@ -12,6 +12,7 @@ class Layout extends Component {
   render() {
     return (
       <Container>
+        <a href="/">home</a>
         {this.props.children}
       </Container>
     )

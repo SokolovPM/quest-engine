@@ -1,9 +1,11 @@
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 
 import constants from '../constants';
 
 const {
   GET_LIST_OF_QUEST,
+  GET_QUEST_INFO
 } = constants;
 
 const getListOfQuestRequest = () => ({
@@ -35,3 +37,11 @@ export const getListOfQuest = () => {
       });
   };
 };
+
+export const getQuestInfo = (questName) => {
+  browserHistory.push('quest');
+  return {
+    type: GET_QUEST_INFO,
+    questName
+  }
+}

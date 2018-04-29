@@ -4,6 +4,7 @@ import MainPage from './components/form';
 import Dashboard from './components/form/dashboard';
 import Layout from './components/form/layout';
 import QuestPage from './components/form/quest-page';
+import Chapter from './components/form/chapter';
 
 const Routes = ({ history }) => (
   <Router history={history}>
@@ -12,6 +13,10 @@ const Routes = ({ history }) => (
       <Route
           path='quest'
           component={QuestPage}
+      />
+      <Route
+          path='chapter'
+          component={Chapter}
       />
     </Route>
   </Router>

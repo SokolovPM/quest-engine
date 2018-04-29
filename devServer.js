@@ -19,7 +19,6 @@ app.use(express.static('dist'));
 app.use(bodyParser.json({ limit: 1024102420, type: 'application/json' }));
 app.use(
   bodyParser.urlencoded({
-    limit: 1024102420,
     type: 'application/json',
     extended: true
   })
@@ -36,6 +35,10 @@ app.get('/quests/:questName/*.jpg', (req, res) => {
 });
 app.get('/quests/:questName/:chapterName/*preview.jpg', (req, res) => {
   res.sendFile(path.join(__dirname, req.path));
+});
+
+app.get('/quests/:questName/:chapterName', (req, res) => {
+  res.sendFile(path.join(__dirname, req.path, 'data.json'));
 });
 
 app.use(

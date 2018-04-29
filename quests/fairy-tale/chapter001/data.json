@@ -1,0 +1,45 @@
+{
+  "id": "chapter001",
+  "name": "Chapter 1",
+  "description": "Some description about chapter 1",
+  "chapterImage": {
+    "src": "quests/fairy-tale/chapter001/chapter001-preview.jpg",
+    "horizontalAlign": false
+  },
+  "steps": [
+    {
+      "id": "chapter001-001",
+      "text": "You are walking throw the beautiful forest and some birds are singing around. (step without some variations, with image)",
+      "nextId": "chapter001-002"
+    },
+    {
+      "id": "chapter001-002",
+      "text": "You have heard some strange sounds from the top of a very tall tree. (step without variations, but with image and sound)",
+      "nextId": "chapter001-003"
+    },
+    {
+      "id": "chapter001-003",
+      "text": "What do you want to do? (step with variations)",
+      "nextSteps": [
+        {
+          "nextId": "chapter001-004",
+          "message": "You go away"
+        },
+        {
+          "nextId": "chapter001-005",
+          "message": "You want to climbe on the tree"
+        }
+      ]
+    },
+    {
+      "id": "chapter001-004",
+      "text": "You have heard some strange sounds again! It calls you!. (step without variations, but with image and sound)",
+      "nextId": "chapter001-003"
+    },
+    {
+      "id": "chapter001-005",
+      "text": "You see the beautiful fairy! She hides behind the leafs and branches. (step without variations, the end of first chapter)",
+      "nextChapter": "chapter002"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "chapter002",
+  "name": "Chapter 2",
+  "description": "Some description about chapter 2",
+  "chapterImage": {
+    "src": "quests/fairy-tale/chapter002/chapter002-preview.jpg",
+    "horizontalAlign": false
+  },
+  "steps": [
+    {
+      "id": "chapter002-001",
+      "text": "You are starring on her. (step without some variations, with image)",
+      "nextId": "chapter002-002"
+    },
+    {
+      "id": "chapter002-002",
+      "text": "What do you want to do? (step with variations)",
+      "nextSteps": [
+        {
+          "nextId": "chapter002-001",
+          "message": "Stay still"
+        },
+        {
+          "nextId": "chapter002-003",
+          "message": "Call her"
+        }
+      ]
+    },
+    {
+      "id": "chapter002-003",
+      "text": "She had saw you and then with laugh fly away.",
+      "nextChapter": "chapter003"
+    }
+  ]
+}

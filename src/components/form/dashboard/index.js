@@ -47,7 +47,6 @@ class Dashboard extends Component {
   render () {
     const listOfQuests = this.props.listOfQuests;
     const chunks = chunk(listOfQuests);
-    console.log('render2', chunks);
     return (
       <Container>
         {map(chunks, (chunk, i) => (

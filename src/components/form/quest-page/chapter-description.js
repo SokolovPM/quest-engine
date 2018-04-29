@@ -8,7 +8,7 @@ class ChapterDescription extends Component {
     const chapter = this.props.chapter
     return (
       <Container>
-        <Row>
+        <Row onClick={() => this.props.onClick(chapter.id)}>
           <Preview size={250}>
             <Frame>
               <Image src={chapter.chapterImage.src} horizontalAlign={chapter.chapterImage.horizontalAlign} size={150}/>

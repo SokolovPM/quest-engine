@@ -6,7 +6,8 @@ import createReducer from '../utils/createReducer';
 
 const {
   GET_LIST_OF_QUEST,
-  GET_QUEST_INFO
+  GET_QUEST_INFO,
+  SELECT_CHAPTER
 } = constants;
 
 const initialValues = {
@@ -14,7 +15,9 @@ const initialValues = {
   error: null,
   listOfQuests: [],
   questName: '',
-  questInfo: null
+  questInfo: null,
+  chapterId: '',
+  chapterData: null
 };
 
 export default createReducer(initialValues, {
@@ -39,4 +42,21 @@ export default createReducer(initialValues, {
     const questInfo = find(state.listOfQuests, quest => quest.id === questName);
     return { isLoading: true, questName, questInfo };
   },
+
+  [`${SELECT_CHAPTER}_REQUEST`]: (state, { chapterId }) => {
+    return { isLoading: true, selectedChapter: chapterId };
+  },
+  [`${SELECT_CHAPTER}_SUCCESS`]: (
+    state,
+    { chapterData }
+  ) => {
+    return {
+      isLoading: false,
+      chapterData
+    };
+  },
+  [`${SELECT_CHAPTER}_FAILURE`]: (state, { error }) => ({
+    isLoading: false,
+    error
+  })
 });

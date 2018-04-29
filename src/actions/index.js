@@ -5,7 +5,8 @@ import constants from '../constants';
 
 const {
   GET_LIST_OF_QUEST,
-  GET_QUEST_INFO
+  GET_QUEST_INFO,
+  SELECT_CHAPTER
 } = constants;
 
 const getListOfQuestRequest = () => ({
@@ -45,3 +46,36 @@ export const getQuestInfo = (questName) => {
     questName
   }
 }
+
+
+const selectChapterRequest = (chapterId) => ({
+  type: `${SELECT_CHAPTER}_REQUEST`,
+  chapterId
+});
+
+const selectChapterSuccess = (chapterData) => ({
+  type: `${SELECT_CHAPTER}_SUCCESS`,
+  chapterData
+});
+
+const selectChapterFailure = error => ({
+  type: `${SELECT_CHAPTER}_FAILURE`,
+  error
+});
+
+export const selectChapter = (chapterId) => {
+  return (dispatch, getState) => {
+    dispatch(selectChapterRequest(chapterId));
+    axios
+      .get(`/quests/${getState().dashboard.questName}/${chapterId}`)
+      .then(response => {
+        dispatch(selectChapterSuccess(response.data));
+        browserHistory.push('chapter');
+        return Promise.resolve();
+      })
+      .catch(error => {
+        dispatch(selectChapterFailure(error));
+        return Promise.reject();
+      });
+  };
+};

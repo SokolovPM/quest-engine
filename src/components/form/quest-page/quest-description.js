@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Container, Row, Preview, Image, Content, Title, Description, Frame} from './components';
+import { Container, Row, Preview, Image, Content, Title, Description, Frame} from '../components';
 
 class QuestDescription extends Component {
   render() {
@@ -10,9 +10,7 @@ class QuestDescription extends Component {
       <Container>
         <Row>
           <Preview size={400}>
-            <Frame>
-              <Image src={questInfo.questImage.src} horizontalAlign={questInfo.questImage.horizontalAlign} size={300} />
-            </Frame>
+            <Image src={questInfo.questImage.src} horizontalAlign={questInfo.questImage.horizontalAlign} size={300} />
           </Preview>
           <Content>
             <Title>{questInfo.name}</Title>

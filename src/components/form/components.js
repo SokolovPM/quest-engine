@@ -20,6 +20,12 @@ export const Preview = styled.div`
 
 export const Image = styled.img`
   ${props => props.horizontalAlign ? `height: ${props.size}px` : `width: ${props.size}px`};
+
+  border-style: solid;
+  border-color: #b3743d;
+  border-image: linear-gradient(30deg, #b3743d 0%, #d0a987 50%, #b3743d 100%);
+  border-image-slice: 1;
+  border-width: 6px;
 `;
 
 export const Content = styled.div`
@@ -28,13 +34,20 @@ export const Content = styled.div`
   width: 100%;
   padding: 30px;
 `;
+
 export const Title = styled.div`
-  font-size: 20px;
+  font-size: ${props => props.fontSize ? props.fontSize : '20px;'}
   font-weight: 700;
   color: rgba(0,0,0,0.7);
 `;
+
 export const Description = styled.div`
   font-size: 17px;
+  color: rgba(0,0,0,0.5);
+`;
+
+export const Text = styled.div`
+  font-size: ${props => props.fontSize ? props.fontSize : '20px;'}
   color: rgba(0,0,0,0.5);
 `;
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Container, Row, Preview, Image, Content, Title, Description, Frame} from './components';
+import { Container, Row, Preview, Image, Content, Title, Description, Frame} from '../components';
 
 class ChapterDescription extends Component {
   render() {
@@ -10,9 +10,7 @@ class ChapterDescription extends Component {
       <Container>
         <Row onClick={() => this.props.onClick(chapter.id)}>
           <Preview size={250}>
-            <Frame>
-              <Image src={chapter.chapterImage.src} horizontalAlign={chapter.chapterImage.horizontalAlign} size={150}/>
-            </Frame>
+            <Image src={chapter.chapterImage.src} horizontalAlign={chapter.chapterImage.horizontalAlign} size={150}/>
           </Preview>
           <Content>
             <Title>

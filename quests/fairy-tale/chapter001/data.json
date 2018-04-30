@@ -10,11 +10,15 @@
     {
       "id": "chapter001-001",
       "text": "You are walking throw the beautiful forest and some birds are singing around. (step without some variations, with image)",
-      "nextId": "chapter001-002"
+      "nextId": "chapter001-002",
+      "stepImage": {
+        "src": "quests/fairy-tale/chapter001/chapter001-001.jpg",
+        "horizontalAlign": true
+      }
     },
     {
       "id": "chapter001-002",
-      "text": "You have heard some strange sounds from the top of a very tall tree. (step without variations, but with image and sound)",
+      "text": "You have heard some strange sounds from the top of a very tall tree. (step without variations, but with sound)",
       "nextId": "chapter001-003"
     },
     {
@@ -33,7 +37,7 @@
     },
     {
       "id": "chapter001-004",
-      "text": "You have heard some strange sounds again! It calls you!. (step without variations, but with image and sound)",
+      "text": "You have heard some strange sounds again! It calls you!. (step without variations, but with sound)",
       "nextId": "chapter001-003"
     },
     {

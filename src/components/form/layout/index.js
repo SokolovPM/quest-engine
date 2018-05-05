@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Audio from '../audio';
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -13,6 +15,7 @@ class Layout extends Component {
     return (
       <Container>
         <a href="/">home</a>
+        <Audio />
         {this.props.children}
       </Container>
     )

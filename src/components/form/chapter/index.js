@@ -4,10 +4,7 @@ import { connect } from 'react-redux';
 import { map, find } from 'lodash';
 
 import { Container, Row, Preview, Image, Title, Description, Frame} from '../components';
-
-
 import { selectChapter } from '../../../actions';
-
 import Step from './step';
 
 const Roll = styled.div`

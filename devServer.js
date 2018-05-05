@@ -41,6 +41,11 @@ app.get('/quests/:questName/:chapterName', (req, res) => {
   res.sendFile(path.join(__dirname, req.path, 'data.json'));
 });
 
+
+app.get('/quests/:questName/:chapterName/*.mp3', (req, res) => {
+  res.sendFile(path.join(__dirname, req.path));
+});
+
 app.use(
   modRewrite([
     '!\\.html|\\.js|\\.svg|\\.woff|\\.ttf|\\.css|\\.png|\\.jpeg|\\.jpg|\\.swf|\\.gif$ /index.html [L]'

@@ -6,6 +6,9 @@
     "src": "quests/fairy-tale/chapter001/chapter001-preview.jpg",
     "horizontalAlign": false
   },
+  "music": {
+    "src":  "quests/fairy-tale/chapter001/forest.mp3"
+  },
   "steps": [
     {
       "id": "chapter001-001",
@@ -19,7 +22,10 @@
     {
       "id": "chapter001-002",
       "text": "You have heard some strange sounds from the top of a very tall tree. (step without variations, but with sound)",
-      "nextId": "chapter001-003"
+      "nextId": "chapter001-003",
+      "soundEffect": {
+        "src":  "quests/fairy-tale/chapter001/bells.mp3"
+      }
     },
     {
       "id": "chapter001-003",
@@ -38,12 +44,22 @@
     {
       "id": "chapter001-004",
       "text": "You have heard some strange sounds again! It calls you!. (step without variations, but with sound)",
-      "nextId": "chapter001-003"
+      "nextId": "chapter001-003",
+      "soundEffect": {
+        "src":  "quests/fairy-tale/chapter001/bells.mp3"
+      }
     },
     {
       "id": "chapter001-005",
       "text": "You see the beautiful fairy! She hides behind the leafs and branches. (step without variations, the end of first chapter)",
-      "nextChapter": "chapter002"
+      "nextChapter": "chapter002",
+      "stepImage": {
+        "src": "quests/fairy-tale/chapter001/chapter001-005.jpg",
+        "horizontalAlign": true
+      },
+      "soundEffect": {
+        "src":  "quests/fairy-tale/chapter001/laugh.mp3"
+      }
     }
   ]
 }

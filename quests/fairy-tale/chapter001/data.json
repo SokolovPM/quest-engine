@@ -7,7 +7,22 @@
     "horizontalAlign": false
   },
   "music": {
-    "src":  "quests/fairy-tale/chapter001/forest.mp3"
+    "src":  "quests/fairy-tale/chapter001/forest.mp3",
+    "effects": {
+      "start": {
+        "soundRise": {
+          "startVolume": 0,
+          "duration": 10000,
+          "endVolume": 1
+        }
+      },
+      "end": {
+        "soundDown": {
+          "duration": 5000,
+          "endVolume": 0
+        }
+      }
+    }
   },
   "steps": [
     {

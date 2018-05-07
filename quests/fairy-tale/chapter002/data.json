@@ -6,6 +6,24 @@
     "src": "quests/fairy-tale/chapter002/chapter002-preview.jpg",
     "horizontalAlign": false
   },
+  "music": {
+    "src":  "quests/fairy-tale/chapter002/forest.mp3",
+    "effects": {
+      "start": {
+        "soundRise": {
+          "startVolume": 0,
+          "duration": 5000,
+          "endVolume": 1
+        }
+      },
+      "end": {
+        "soundDown": {
+          "duration": 5000,
+          "endVolume": 0
+        }
+      }
+    }
+  },
   "steps": [
     {
       "id": "chapter002-001",

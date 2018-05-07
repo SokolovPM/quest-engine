@@ -1,0 +1,34 @@
+{
+  "id": "chapter003",
+  "name": "Chapter 3",
+  "description": "Some description about chapter 3",
+  "chapterImage": {
+    "src": "quests/fairy-tale/chapter003/chapter003-preview.jpg",
+    "horizontalAlign": false
+  },
+  "music": {
+    "src":  "quests/fairy-tale/chapter003/forest.mp3",
+    "effects": {
+      "start": {
+        "soundRise": {
+          "startVolume": 0,
+          "duration": 5000,
+          "endVolume": 1
+        }
+      },
+      "end": {
+        "soundDown": {
+          "duration": 5000,
+          "endVolume": 0
+        }
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "chapter003-001",
+      "text": "You are starring on her. (step without some variations, with image)",
+      "nextId": "chapter002-002"
+    }
+  ]
+}

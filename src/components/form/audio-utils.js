@@ -1,7 +1,6 @@
 const audioId = 'background-musik';
 const steps = 100;
 
-
 export const changeSound = (duration, endVolume) => {
   const audio = document.getElementById(audioId);
   const currentVolume = audio.volume;
@@ -31,22 +30,9 @@ const step = (endVolume, volumeStep, durationStep) => {
 
 
 export const changeTrack = (oldMusic, newMusic) => {
-  console.log('change track', oldMusic, newMusic);
-  if (!oldMusic) {
     const audio = document.getElementById(audioId);
     audio.volume = newMusic.effects.start.soundRise.startVolume;
     audio.src = newMusic.src;
     audio.autoplay = true;
     changeSound(newMusic.effects.start.soundRise.duration, newMusic.effects.start.soundRise.endVolume);
-  } else {
-    changeSound(oldMusic.effects.end.soundDown.duration, newMusic.effects.end.soundDown.endVolume);
-
-    setTimeout(() => {
-      const audio = document.getElementById(audioId);
-      audio.volume = newMusic.effects.start.soundRise.startVolume;
-      audio.src = newMusic.src;
-      audio.autoplay = true;
-      changeSound(newMusic.effects.start.soundRise.duration, newMusic.effects.start.soundRise.endVolume);
-    }, oldMusic.effects.end.soundDown.duration)
-  }
 }

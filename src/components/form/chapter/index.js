@@ -7,6 +7,8 @@ import { Container, Row, Preview, Image, Title, Description, Frame} from '../com
 import { selectChapter } from '../../../actions';
 import Step from './step';
 
+import { changeSound } from '../audio-utils';
+
 const Roll = styled.div`
   width: 800px;
   padding: 30px;
@@ -43,6 +45,21 @@ class Chapter extends Component {
     this.setState({ steps });
   }
 
+  handleNextChapter = (nextChapter) => {
+    const chapterData = this.props.chapterData;
+    if (chapterData.music && chapterData.music.effects && chapterData.music.effects.end && chapterData.music.effects.end.soundDown) {
+      const soundDown = chapterData.music.effects.end.soundDown;
+      changeSound(soundDown.duration, soundDown.endVolume);
+      setTimeout(() => {
+        this.props.selectChapter(nextChapter);
+      }, soundDown.duration)
+      return;
+    } else {
+
+      this.props.selectChapter(nextChapter);
+    }
+  }
+
   render() {
     const steps = this.state.steps;
     const chapterData = this.props.chapterData;
@@ -53,7 +70,7 @@ class Chapter extends Component {
             <Title fontSize="26px" style={{ marginBottom: '30px' }}>{chapterData.name}</Title>
             <Image style={{ marginBottom: '30px' }} src={chapterData.chapterImage.src} size={500}/>
           </Header>
-          {map(steps, (step, i) => (<Step key={i} step={step} nextStep={this.nextStep} nextChapter={this.props.selectChapter}/>))}
+          {map(steps, (step, i) => (<Step key={i} step={step} nextStep={this.nextStep} nextChapter={this.handleNextChapter}/>))}
         </Roll>
       </Container>
     )

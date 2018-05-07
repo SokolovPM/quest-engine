@@ -19,6 +19,11 @@ class Step extends Component {
     return true;
   }
 
+  handleNextChapter = () => {
+    const step = this.props.step;
+    this.props.nextChapter(step.nextChapter)
+  }
+
   renderNext = () => {
     const step = this.props.step;
     if (step.nextId) {
@@ -34,7 +39,7 @@ class Step extends Component {
       );
     }
     if (step.nextChapter) {
-      return (<span onClick={() => this.props.nextChapter(step.nextChapter)}>TO THE NEXT CHAPTER!</span>);
+      return (<span onClick={this.handleNextChapter}>TO THE NEXT CHAPTER!</span>);
     }
   }
 

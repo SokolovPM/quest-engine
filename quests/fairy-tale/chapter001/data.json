@@ -18,7 +18,7 @@
       },
       "end": {
         "soundDown": {
-          "duration": 5000,
+          "duration": 10000,
           "endVolume": 0
         }
       }

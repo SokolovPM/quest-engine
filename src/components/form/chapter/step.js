@@ -12,8 +12,12 @@ export const Row = styled.div`
 
 class Step extends Component {
 
+  state = {
+    end: false
+  }
+
   shouldComponentUpdate = (nextProps, nextState) => {
-    if (this.props.step === nextProps.step) {
+    if (this.props.step === nextProps.step && this.state === nextState) {
       return false;
     }
     return true;
@@ -21,6 +25,7 @@ class Step extends Component {
 
   handleNextChapter = () => {
     const step = this.props.step;
+    this.setState({ end: true });
     this.props.nextChapter(step.nextChapter)
   }
 
@@ -39,7 +44,7 @@ class Step extends Component {
       );
     }
     if (step.nextChapter) {
-      return (<span onClick={this.handleNextChapter}>TO THE NEXT CHAPTER!</span>);
+      return (<span onClick={this.handleNextChapter}>{this.state.end ? 'LOADING NEXT CHAPTER...' : 'TO THE NEXT CHAPTER!'}</span>);
     }
   }
 

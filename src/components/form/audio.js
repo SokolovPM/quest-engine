@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { forEach } from 'lodash';
 
 import { changeSound, changeTrack } from './audio-utils.js';
 
@@ -12,7 +13,8 @@ const audioId = 'background-musik';
 class Audio extends Component {
   state = {
     play: false,
-    src: null
+    src: null,
+    value: 100
   }
 
   reduceVolume = () => {
@@ -35,13 +37,17 @@ class Audio extends Component {
     }
   }
 
+  volumeChange = (e) => {
+    this.setState({ value: e.target.value });
+    const audios = document.getElementsByTagName('audio');
+    forEach(audios, audio => audio.volume = e.target.value / 100);
+  }
+
   render () {
     const { music } = this.props;
     return (
       <Container>
-        Audio  Player!!!
-        <div onClick={this.reduceVolume}>-</div>
-        <div onClick={this.increaseVolume}>+</div>
+        <input id="sound-volume" type="range" onChange={this.volumeChange} min="0" max="100" value={this.state.value} />
         <audio
           id={audioId}
           loop={true}

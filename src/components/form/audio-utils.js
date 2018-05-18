@@ -1,8 +1,13 @@
 const audioId = 'background-musik';
 const steps = 100;
+const rangeVolumeId="sound-volume"
 
 export const changeSound = (duration, endVolume) => {
   const audio = document.getElementById(audioId);
+  const rangeVolume = document.getElementById(rangeVolumeId);
+  if (endVolume > (rangeVolume.value/100)) {
+    endVolume = rangeVolume.value/100;
+  }
   const currentVolume = audio.volume;
   const volumeStep = (endVolume - currentVolume) / steps;
   const durationStep = duration / steps;

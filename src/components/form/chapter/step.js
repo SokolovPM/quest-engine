@@ -2,23 +2,31 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { map } from 'lodash';
 
-import { Container, Text, Image, Preview } from '../components';
-
+import { Text, Image, Preview } from '../components';
 import Sound from './sound';
+import NextButton from '../../buttons/next-button';
+import ChooseNext from '../../buttons/choose-next';
 
-export const Row = styled.div`
+const Container = styled.div`
+  margin-bottom: 20px;
+`;
+
+const Row = styled.div`
   display: flex;
 `;
 
 class Step extends Component {
-
   state = {
-    end: false
+    end: false,
+    renderNextButton: true
   }
 
   shouldComponentUpdate = (nextProps, nextState) => {
     if (this.props.step === nextProps.step && this.state === nextState) {
       return false;
+    }
+    if (this.props.step !== nextProps.step) {
+      this.setState({ renderNextButton: true });
     }
     return true;
   }
@@ -29,22 +37,41 @@ class Step extends Component {
     this.props.nextChapter(step.nextChapter)
   }
 
+  handleNextStep = () => {
+    const step = this.props.step;
+    this.props.nextStep(step.nextId);
+    this.setState({ renderNextButton: false });
+  }
+
   renderNext = () => {
     const step = this.props.step;
     if (step.nextId) {
-      return (<span onClick={() => this.props.nextStep(step.nextId)}>NEXT STEP</span>)
+      return (
+        <div>
+          <NextButton
+            onClick={this.handleNextStep}
+            title="NEXT STEP"
+          />
+        </div>
+      )
     }
     if (step.nextSteps) {
       return (
-        <div>
-          {
-            map(step.nextSteps, next => (<span key={next.nextId} onClick={() => this.props.nextStep(next.nextId)}>{next.message}</span>))
-          }
-        </div>
-      );
+        <ChooseNext steps={step.nextSteps} confirm={this.props.nextStep} />
+      )
     }
+
     if (step.nextChapter) {
-      return (<span onClick={this.handleNextChapter}>{this.state.end ? 'LOADING NEXT CHAPTER...' : 'TO THE NEXT CHAPTER!'}</span>);
+      return (
+        <div>
+          <NextButton
+            onClick={this.handleNextChapter}
+            title={this.state.end ? 'LOADING NEXT CHAPTER...' : 'TO THE NEXT CHAPTER!'}
+            disabled={this.state.end}
+            width={300}
+          />
+        </div>
+      )
     }
   }
 
@@ -64,7 +91,7 @@ class Step extends Component {
           }
           {step.text && this.renderText()}
         </Row>
-        {this.renderNext()}
+        {this.state.renderNextButton && this.renderNext()}
         {step.soundEffect && <Sound sound={step.soundEffect} />}
       </Container>
     )

@@ -3,12 +3,19 @@ import styled from 'styled-components';
 
 import Audio from '../audio';
 
+import Language from './language'
+
 const Container = styled.div`
   display: flex;
+  justify-content: flex-end;
+  & div {
+    margin: 0 20px;
+  }
 `;
 
 const Home = styled.div`
   margin: 0 20px;
+  width: 100%;
 
   & a {
     text-decoration: none;
@@ -16,6 +23,7 @@ const Home = styled.div`
     font-size: 20px;
   }
 `;
+
 
 class Header extends Component {
   render() {
@@ -25,6 +33,7 @@ class Header extends Component {
           <a href="/">HOME</a>
         </Home>
         <Audio />
+        <Language />
       </Container>
     )
   }

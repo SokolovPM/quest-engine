@@ -6,6 +6,7 @@ import { forEach } from 'lodash';
 import { changeSound, changeTrack } from './audio-utils.js';
 
 const Container = styled.div`
+  padding-top: 5px;
 `;
 
 const audioId = 'background-musik';

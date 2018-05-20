@@ -5,5 +5,11 @@
   "questImage": {
     "src": "quests/spy-tale/spy.jpg",
     "horizontalAlign": false
-  }
+  },
+  "languages": [
+    {
+      "name": "ENGLISH",
+      "code": "EN"
+    }
+  ]
 }

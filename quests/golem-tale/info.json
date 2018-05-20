@@ -5,5 +5,11 @@
   "questImage": {
     "src": "quests/golem-tale/golem.jpg",
     "horizontalAlign": false
-  }
+  },
+  "languages": [
+    {
+      "name": "ENGLISH",
+      "code": "EN"
+    }
+  ]
 }

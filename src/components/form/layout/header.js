@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import Audio from '../audio';
-
 import Language from './language'
 
 const Container = styled.div`
@@ -24,7 +24,6 @@ const Home = styled.div`
   }
 `;
 
-
 class Header extends Component {
   render() {
     return (
@@ -32,11 +31,15 @@ class Header extends Component {
         <Home>
           <a href="/">HOME</a>
         </Home>
-        <Audio />
-        <Language />
+        {this.props.questName && <Audio />}
+        {this.props.questName && <Language />}
       </Container>
     )
   }
 }
 
-export default Header;
+export default connect(
+  state => ({
+    questName: state.dashboard.questName
+  })
+)(Header);

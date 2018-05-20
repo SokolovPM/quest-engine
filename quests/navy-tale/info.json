@@ -5,5 +5,11 @@
   "questImage": {
     "src": "quests/navy-tale/navy.jpg",
     "horizontalAlign": true
-  }
+  },
+  "languages": [
+    {
+      "name": "ENGLISH",
+      "code": "EN"
+    }
+  ]
 }

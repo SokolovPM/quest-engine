@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { map, find } from 'lodash';
+import { connect } from 'react-redux';
+
+import { selectLanguage } from '../../../actions';
 
 const Container = styled.div`
+  width: 150px;
   &:hover > ul {
     display: inherit;
   }
@@ -36,38 +40,22 @@ const Title = styled.span`
   cursor: pointer;
 `;
 
-const languages = [
-  {
-    name: 'ENGLISH',
-    code: 'EN'
-  },
-  {
-    name: 'RUSSIAN',
-    code: 'RU'
-  },
-  {
-    name: 'DEUTSCH',
-    code: 'DE'
-  },
-]
-
 class Language extends Component {
-  state = {
-    language: 'ENGLISH'
-  }
-
   handleClick = (code) => {
-    const language = find(languages, language => language.code === code);
-    this.setState({ language: language.name });
+    this.props.selectLanguage(code);
   }
 
   render () {
+    const { languageList, language } = this.props;
+    if (languageList.length === 0) {
+      return <div />
+    }
     return (
       <Container>
-        <Title>{this.state.language}</Title>
+        <Title>{language.name}</Title>
         <List>
-          {map(languages, language => (
-            <li key={language.code} onClick={() => this.handleClick(language.code)}>{language.name}</li>
+          {map(languageList, lang => (
+            <li key={lang.code} onClick={() => this.handleClick(lang.code)}>{lang.name}</li>
           ))}
         </List>
       </Container>
@@ -75,4 +63,10 @@ class Language extends Component {
   }
 }
 
-export default Language;
+export default connect(
+  state => ({
+    languageList: state.dashboard.languageList,
+    language: state.dashboard.language
+  }),
+  { selectLanguage }
+)(Language);

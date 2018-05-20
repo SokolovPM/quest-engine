@@ -6,6 +6,20 @@
     "src": "quests/fairy-tale/fairy.jpg",
     "horizontalAlign": false
   },
+  "languages": [
+    {
+      "name": "ENGLISH",
+      "code": "EN"
+    },
+    {
+      "name": "RUSSIAN",
+      "code": "RU"
+    },
+    {
+      "name": "DEUTSCH",
+      "code": "DE"
+    }
+  ],
   "chapters": [
     {
       "id": "chapter001",

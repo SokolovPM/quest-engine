@@ -6,7 +6,8 @@ import constants from '../constants';
 const {
   GET_LIST_OF_QUEST,
   GET_QUEST_INFO,
-  SELECT_CHAPTER
+  SELECT_CHAPTER,
+  SELECT_LANGUAGE
 } = constants;
 
 const getListOfQuestRequest = () => ({
@@ -79,3 +80,8 @@ export const selectChapter = (chapterId) => {
       });
   };
 };
+
+export const selectLanguage = (code) => ({
+  type: SELECT_LANGUAGE,
+  code
+});

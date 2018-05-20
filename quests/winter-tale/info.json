@@ -5,5 +5,11 @@
   "questImage": {
     "src": "quests/winter-tale/winter.jpg",
     "horizontalAlign": true
-  }
+  },
+  "languages": [
+    {
+      "name": "ENGLISH",
+      "code": "EN"
+    }
+  ]
 }

@@ -4,8 +4,7 @@ import { map } from 'lodash';
 
 import { Text, Image, Preview } from '../components';
 import Sound from './sound';
-import NextButton from '../../buttons/next-button';
-import ChooseNext from '../../buttons/choose-next';
+import { NextButton, ChooseNext } from '../../buttons';
 
 const Container = styled.div`
   margin-bottom: 20px;

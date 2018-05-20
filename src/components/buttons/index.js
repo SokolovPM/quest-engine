@@ -1,7 +1,2 @@
-import NextButton from './next-button';
-
-const Buttons = {
-  NextButton
-}
-
-export default Buttons;
+export NextButton from './next-button';
+export ChooseNext from './choose-next';

@@ -45,8 +45,8 @@ class Tile extends Component {
           <Image src={quest.questImage.src} horizontalAlign={quest.questImage.horizontalAlign}/>
         </Preview>
         <Content>
-          <Header>{quest.name}</Header>
-          <Description>{quest.description}</Description>
+          <Header>{quest.name[quest.defaultLanguage]}</Header>
+          <Description>{quest.description[quest.defaultLanguage]}</Description>
         </Content>
 
       </Container>

@@ -1,11 +1,20 @@
 {
   "id": "fairy-tale",
-  "name": "Fairy Tale",
-  "description": "This is a short quest for children.",
+  "name": {
+    "EN": "Fairy Tale",
+    "RU": "Сказка о лесных феях",
+    "DE": "Märchen über die Fee"
+  },
+  "description": {
+    "EN": "This is a short quest for children.",
+    "RU": "Маленькая сказка для детей",
+    "DE": "Das ist klein Geschichte für Kinder"
+  },
   "questImage": {
     "src": "quests/fairy-tale/fairy.jpg",
     "horizontalAlign": false
   },
+  "defaultLanguage": "EN",
   "languages": [
     {
       "name": "ENGLISH",
@@ -23,8 +32,17 @@
   "chapters": [
     {
       "id": "chapter001",
-      "name": "Chapter 1",
+      "name": {
+        "EN": "Chapter 1",
+        "RU": "Глава 1",
+        "DE": "Kapitel 1"
+      },
       "description": "Some description about chapter 1",
+      "description": {
+        "EN": "Some description about chapter 1",
+        "RU": "Описание главы 1",
+        "DE": "die Beschreibung des Kapitels 1"
+      },
       "chapterImage": {
         "src": "quests/fairy-tale/chapter001/chapter001-preview.jpg",
         "horizontalAlign": false
@@ -32,8 +50,17 @@
     },
     {
       "id": "chapter002",
-      "name": "Chapter 2",
+      "name": {
+        "EN": "Chapter 2",
+        "RU": "Глава 2",
+        "DE": "Kapitel 2"
+      },
       "description": "Some description about chapter 2",
+      "description": {
+        "EN": "Some description about chapter 2",
+        "RU": "Описание главы 2",
+        "DE": "die Beschreibung des Kapitels 2"
+      },
       "chapterImage": {
         "src": "quests/fairy-tale/chapter002/chapter002-preview.jpg",
         "horizontalAlign": false
@@ -41,8 +68,16 @@
     },
     {
       "id": "chapter003",
-      "name": "Chapter 3",
-      "description": "Some description about chapter 3",
+      "name": {
+        "EN": "Chapter 3",
+        "RU": "Глава 3",
+        "DE": "Kapitel 3"
+      },
+      "description": {
+        "EN": "Some description about chapter 3",
+        "RU": "Описание главы 3",
+        "DE": "die Beschreibung des Kapitels 3"
+      },
       "chapterImage": {
         "src": "quests/fairy-tale/chapter003/chapter003-preview.jpg",
         "horizontalAlign": false

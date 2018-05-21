@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { map } from 'lodash';
 
 import { selectChapter } from '../../../actions';
+import { getQuestInfo } from '../../../selectors';
 
 import QuestDescription from './quest-description';
-
 import ChapterDescription from './chapter-description';
 
 const Container = styled.div``;
@@ -34,7 +34,7 @@ class QuestPage extends Component {
 
 export default connect(
   state => ({
-    questInfo: state.dashboard.questInfo
+    questInfo: getQuestInfo(state)
   }),
   { selectChapter }
 )(QuestPage);
